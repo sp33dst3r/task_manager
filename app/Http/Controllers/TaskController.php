@@ -13,7 +13,7 @@ class TaskController extends Controller
     public function list()
     {
         $tasks = Task::where("user_id", Auth::user()->id)->get();
-        return view('tasks.index');
+        return view('tasks.index', ["tasks"=>$tasks]);
     }
 
     public function show($test)

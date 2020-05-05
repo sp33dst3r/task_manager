@@ -40,12 +40,7 @@ class LoginController extends Controller
 
     protected function authenticated()
     {
-       /*  if ( auth()->user()->hasRole('admin') ) {// do your magic here
-            return redirect()->route('test');
-        } */
         $user = Auth::user();
-       // var_dump(Auth::user());
-
         return redirect()->route('tas', ['id' => $user->id]);
     }
 }

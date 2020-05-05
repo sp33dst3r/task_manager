@@ -9,5 +9,9 @@
 @endsection
 
 @section('content')
-    <p>This is my body content.</p>
+    @forelse ($tasks as $task)
+        <li>{{ $task->name }}</li>
+    @empty
+        <p>No tasks</p>
+    @endforelse
 @endsection
